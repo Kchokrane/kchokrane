@@ -1,0 +1,15 @@
+install=>
+{
+	plagins=>Elementor 
+	plagins=> WooCommerce
+			woocommerce -> setting->
+			payments->Enabled PayPal->Manage-> CHECK PayPal sandbox.
+	theam=>astra
+	plagins=>GDPR Cookie Consent Banner
+	plagins=>Google Language Translator
+	plagins=>WordPress SEO Plugin 
+        product sharing {facebook twitter ....}
+        itheme security
+        updraft plus
+
+}
