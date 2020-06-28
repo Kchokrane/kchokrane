@@ -1,0 +1,825 @@
+@use 'shared';
+
+// 
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    // 
+    // background-color: purple;
+}
+
+*::selection {
+    color: shared.$black;
+    background: shared.$white;
+    /* WebKit/Blink Browsers */
+}
+
+body {
+    background-image: url('../img/space.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+// 
+#container {
+    width: 100vw;
+    height: 100vh;
+    // 
+    // background-color: shared.$black;
+    @include shared.flex(column, unset, unset);
+}
+
+// 
+#navBar {
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid white;
+    // 
+    // position: fixed;
+    flex: none;
+    // 
+    @include shared.flex(row, unset, center);
+
+    // 
+    #navBar-Left,
+    #navBar-Right {
+        flex: 1;
+        height: 100%;
+        // 
+        box-sizing: border-box;
+        padding: 0 25px;
+
+        // 
+        a {
+            text-decoration: none;
+            color: shared.$white;
+        }
+    }
+
+    #navBar-Left {
+        @include shared.flex(row, unset, center);
+
+        a {
+            .gg-edit-highlight {
+                --ggs: 1.5;
+            }
+
+            &:last-of-type {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    #navBar-Right {
+        @include shared.flex(row-reverse, unset, center);
+
+        a {
+            margin-left: 20px;
+            font-family: 'Mukta', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            // 
+            div {
+                @include shared.flex(row, unset, center);
+
+                i {
+                    margin-right: 7.5px;
+                }
+            }
+        }
+    }
+}
+
+// 
+#content {
+    width: 100vw;
+    // height: 100vh;
+    @include shared.flex(row, unset, unset);
+    // 
+    flex: auto;
+    overflow-x: auto;
+    // overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+
+
+    // background-color: purple;
+}
+
+.sections {
+    // height: 100vh;
+    flex: none;
+    width: 100vw;
+    border-right: 1px solid white;
+    scroll-snap-align: center;
+
+    // background-color: red;
+    // GALLERY
+    &:first-of-type {
+        // background-color: red;
+        @include shared.flex(row, unset, unset);
+
+        #galerie-preview {
+            // background-color: red;
+            flex: 1;
+            background-image: url('../img/shape2.png');
+            background-repeat: no-repeat;
+            // 
+            // filter: invert(1);
+            background-size: 70%;
+            background-position-y: center;
+            // 
+            @include shared.flex(row, center, center);
+
+            #galerie-preview-planet {
+                width: 70%;
+                height: 70%;
+                // background-image: url('../img/earth.png');
+                background-position: center;
+                // background-size: cover;
+                background-repeat: no-repeat;
+                // 
+                background-size: 100%;
+            }
+        }
+
+        #galerie-content {
+            #galerie-images {
+                width: 70%;
+                height: 250px;
+                margin: 0 auto;
+                @include shared.flex(row, center, center);
+
+                .galerie-images-img {
+                    border: 1px solid white;
+                    flex: 1;
+                    // flex: none;
+                    // width: 200px;
+                    height: 100%;
+                    transform: skew(-15deg);
+                    background-position: 90%;
+                    background-size: 250%;
+                    filter: brightness(0.5);
+                    transition: all 200ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-size: 270%;
+                        filter: brightness(0.75);
+                    }
+                }
+            }
+
+            #galerie-navigation {
+                @include shared.flex(row-reverse, unset, unset);
+                box-sizing: border-box;
+                padding-right: 20%;
+                margin-top: 15px;
+
+                span {
+                    color: black;
+                    background-color: white;
+                    padding: 0 20px;
+                    padding-bottom: 15px;
+                    transform: skew(-15deg);
+                    font-size: 100px;
+                    line-height: 50px;
+                    font-family: 'Kelly Slab', cursive;
+                    user-select: none;
+                    transition: all 200ms ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #ebebeb;
+                    }
+                }
+            }
+
+            #galerie-desc {
+                // margin-top: 75px;
+                box-sizing: border-box;
+                padding-left: 50px;
+                @include shared.flex(column, unset, unset);
+
+                #galerie-desc-title {
+                    font-family: 'Zilla Slab Highlight', cursive;
+                    font-size: 100px;
+                    color: shared.$white;
+                    text-transform: uppercase;
+                }
+
+                #galerie-desc-txt {
+                    font-family: 'Kelly Slab', cursive;
+                    color: shared.$white;
+                    margin-top: 10px;
+                    letter-spacing: 0.5px;
+                    font-size: 17px;
+                }
+
+                #galerie-desc-details {
+                    margin-top: 10px;
+                    @include shared.flex(column, unset, unset);
+
+                    .galerie-desc-det {
+                        @include shared.flex(row, unset, center);
+                        margin-bottom: 5px;
+
+                        span {
+                            font-family: 'Kelly Slab', cursive;
+                            color: shared.$white;
+                            font-size: 18px;
+
+                            &:first-of-type {
+                                font-size: 24px;
+                                text-transform: uppercase;
+                                text-decoration: underline;
+                            }
+
+                            &:last-of-type {
+                                margin-left: 7.5px;
+                                padding: 2px 5px;
+                                background-color: shared.$white;
+                                color: shared.$black;
+                                user-select: none;
+                                text-transform: uppercase;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            #galerie-reserve {
+                @include shared.flex(row-reverse, unset, unset);
+                box-sizing: border-box;
+                padding-left: 50px;
+                margin-top: 50px;
+
+                #galerie-reserve-btn {
+                    margin-right: 25px;
+                    flex: none;
+                    font-family: 'Kelly Slab', cursive;
+                    font-size: 30px;
+                    // color: transparent;
+                    background-color: shared.$white;
+                    padding: 10px 20px;
+                    width: fit-content;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    user-select: none;
+                    cursor: pointer;
+                    transition: all 200ms ease-in-out;
+
+                    &:hover {
+                        background-color: #ebebeb;
+                    }
+                }
+            }
+        }
+
+        #galerie-content {
+            // background-color: rgb(34, 37, 34);
+            flex: 1;
+        }
+    }
+
+    //Reservation
+    &:nth-of-type(2) {
+        @include shared.flex(row, center, center);
+        position: relative;
+
+        #form-reservation {
+            width: fit-content;
+            height: fit-content;
+            @include shared.flex(column, unset, unset);
+            // 
+            // height: 850px;
+            height: 95%;
+            width: 870px;
+            box-sizing: border-box;
+            padding-right: 35px;
+            overflow-y: scroll;
+
+            // 
+            .form-title {
+                @include shared.form-title;
+                margin-bottom: 20px;
+                // font-style: italic;
+
+                position: sticky;
+                top: -5px;
+                z-index: 5;
+
+                text-shadow: 0px 5px 20px shared.$black;
+            }
+
+            .form-res-row {
+                // @include shared.flex(row, flex-start, unset);
+                // margin-bottom: 10px;
+                // font-family: "Kelly Slab", cursive;
+                @include shared.form-row;
+                align-items: center;
+
+
+                // 
+                .form-res-row-title {
+                    @include shared.form-row-title;
+                    // color: shared.$white;
+                    // text-decoration: underline;
+                    // font-size: 40px;
+                }
+
+                .form-res-row-preview {
+                    width: 450px;
+                    height: 200px;
+                    margin-left: auto;
+                    background: transparent;
+                    border: 1px solid shared.$white;
+                    // background-color: red;
+                    // 
+                    background-image: url('../img/earth.png');
+                    background-size: 80%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    // 
+                    transform: skewX(-15deg);
+                }
+
+                .form-res-row-log {
+                    flex: 1;
+                    @include shared.flex(row, flex-end, center);
+
+                    // 
+                    .form-res-row-log-element {
+                        @include shared.flex(column, unset, center);
+                        width: 275px;
+                        height: 200px;
+                        border: 1px solid shared.$white;
+                        transform: skewX(-15deg);
+                        transition: 200ms all ease-in-out;
+                        cursor: pointer;
+
+                        &:hover {
+                            // transform: skewX(-10deg);
+                        }
+
+                        &:first-of-type {
+                            margin-right: 5px;
+                        }
+
+                        // 
+                        div {
+                            width: 100%;
+                            height: 75%;
+                            background-color: shared.$white;
+                            background-position: center;
+                            background-size: cover;
+                        }
+
+                        // 
+                        span {
+                            color: shared.$white;
+                            font-size: 20px;
+                            text-transform: uppercase;
+                            user-select: none;
+                        }
+                    }
+                }
+
+                .form-res-row-data {
+                    @include shared.form-input;
+                    height: 44px;
+                }
+
+                .form-res-price {
+                    margin-left: auto;
+                    text-decoration: none;
+                    user-select: none;
+                    text-transform: uppercase;
+                }
+
+                &:last-of-type {
+                    flex-direction: row-reverse;
+                    margin-top: 15px;
+
+                    // 
+                    span {
+                        transform: skewX(-15deg);
+                        user-select: none;
+                        cursor: pointer;
+                        font-size: 45px;
+                        padding: 5px 10px;
+
+                        &:first-of-type {
+                            color: shared.$black;
+                            background-color: shared.$white;
+                        }
+
+                        &:last-of-type {
+                            color: shared.$white;
+                            border: 2px solid shared.$white;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        // 
+        // 
+        // 
+        #section2-alerts {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 10;
+            // 
+            // 
+            @include shared.flex(row, center, center);
+            display: none;
+            pointer-events: none;
+
+            // 
+            #section2-confirmation {
+                @include shared.flex(column, unset, unset);
+                background-color: shared.$white;
+                transform: skew(-15deg);
+                width: 50%;
+                // height: 200px;
+                box-sizing: border-box;
+                padding: 20px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                font-size: 40px;
+                color: shared.$black;
+                display: none;
+
+                span {
+                    flex: 1;
+                }
+
+                #section2-confirmation-form {
+                    margin: 15px 0;
+                }
+
+                #section2-confirmation-btns {
+                    @include shared.flex(row, flex-end, center);
+
+                    span {
+                        flex: 0;
+                        padding: 5px 10px;
+                        user-select: none;
+                        cursor: pointer;
+
+                        // 
+                        &:last-of-type {
+                            transition: 200ms all ease-in-out;
+                            border: 3px solid black;
+                            margin-left: 5px;
+
+                            &:hover {
+                                color: shared.$white;
+                                border-color: shared.$white;
+                                background-color: shared.$black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 
+            #section2-msgs {
+                text-transform: capitalize;
+                display: none;
+                align-self: flex-end;
+                width: 50%;
+                height: 75px;
+                transform: skew(-15deg);
+                background-color: shared.$white;
+                // position: absolute;
+                // bottom: 40px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                // color: black;
+                color: #f73535;
+                font-size: 25px;
+                align-items: center;
+                justify-content: center;
+                // 
+                transition: all 200ms ease-in-out;
+
+                i {
+                    // color: #f73535;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+    }
+
+    //INSCRIPTION
+    &:last-of-type {
+        @include shared.flex(row, center, center);
+        position: relative;
+
+        // 
+        #form-inscription {
+            width: fit-content;
+            height: fit-content;
+            @include shared.flex(column, unset, unset);
+
+            .form-title {
+                @include shared.form-title;
+                margin-bottom: 20px;
+                // font-style: italic;
+            }
+
+            .form-row {
+                @include shared.form-row;
+                // margin-bottom: 10px;
+                // font-family: "Kelly Slab", cursive;
+
+                .form-row-title {
+                    @include shared.form-row-title;
+                    // font-family: "Kelly Slab", cursive;
+                    // color: shared.$white;
+                    // text-transform: uppercase;
+                    // text-decoration: underline;
+                    // background-color: shared.$white;
+                    // padding: 5px 10px;
+                    // font-size: 40px;
+                }
+
+                .form-row-input {
+                    @include shared.form-input;
+                    // width: 300px;
+                    // margin-left: auto;
+                    // transform: skewX(-15deg);
+                    // background: transparent;
+                    // border: none;
+                    // padding: 0;
+                    // // 
+                    // outline: none;
+                    // border: 2px solid shared.$white;
+                    // padding-left: 5px;
+                    // color: shared.$white;
+                    // font-size: 18px;
+                }
+
+                &:last-of-type {
+                    flex-direction: row-reverse;
+                    margin-top: 15px;
+
+                    // 
+                    span {
+                        transform: skewX(-15deg);
+                        user-select: none;
+                        cursor: pointer;
+                        font-size: 45px;
+                        padding: 5px 10px;
+
+                        &:first-of-type {
+                            color: shared.$black;
+                            background-color: shared.$white;
+                        }
+
+                        &:last-of-type {
+                            color: shared.$white;
+                            border: 2px solid shared.$white;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #section3-alerts {
+            width: 100vw;
+            height: 100vh;
+            // background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            // 
+            // 
+            @include shared.flex(row, center, center);
+            display: none;
+            pointer-events: none;
+
+            #section3-msgs {
+                // display: flex;
+                text-transform: capitalize;
+                align-self: flex-end;
+                width: 50%;
+                height: 75px;
+                transform: skew(-15deg);
+                background-color: shared.$white;
+                // position: absolute;
+                // bottom: 40px;
+                // 
+                font-family: "Kelly Slab", cursive;
+                // color: black;
+                color: #f73535;
+                font-size: 25px;
+                align-items: center;
+                justify-content: center;
+                // 
+                transition: all 200ms ease-in-out;
+
+                i {
+                    // color: #f73535;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+// 
+// 
+// 
+@media screen and (max-width:680px) {
+    #navBar-Right {
+        a {
+            div {
+                i {
+                    margin: 0;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// 
+@media screen and (max-width:1300px) {
+    #galerie-images {
+        width: 80% !important;
+    }
+
+    #galerie-preview {
+        flex: 0.8 !important;
+        background-size: 100% !important;
+
+        #galerie-preview-planet {
+            width: 90% !important;
+        }
+    }
+}
+
+// 
+@media screen and (max-width:1050px) {
+    .sections {
+        &:first-of-type {
+            flex-direction: column;
+            position: relative;
+
+            #galerie-preview {
+                position: absolute;
+                width: 50vw;
+                height: 50vh;
+                bottom: 0;
+                right: 0;
+                transform: rotate(180deg);
+
+                #galerie-preview-planet {
+                    transform: rotate(-180deg);
+                    height: 100%;
+                    background-size: 90%;
+                }
+            }
+
+            #galerie-navigation {
+                padding-left: 57px;
+                margin-bottom: 10px;
+                justify-content: flex-end !important;
+            }
+
+            #galerie-desc-txt {
+                width: 50%;
+            }
+
+            #galerie-reserve {
+                justify-content: flex-end !important;
+                margin-top: 20px !important;
+            }
+        }
+    }
+}
+
+// 
+@media screen and (max-width:530px) {
+    #content {
+        flex-direction: column;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+
+        .sections {
+            height: 100vh;
+            border-right: none;
+            border-bottom: 1px solid shared.$white;
+        }
+    }
+
+    #galerie-preview {
+        background-image: none !important;
+    }
+
+    #galerie-content {
+        div {
+            padding-left: 20px !important;
+
+            .galerie-desc-det {
+                padding: 0 !important;
+            }
+        }
+
+        #galerie-desc-details {
+            padding: 0 !important;
+        }
+
+    }
+
+    // 
+    .galerie-images-img {
+        background-repeat: no-repeat;
+    }
+
+    #galerie-images {
+        width: 90% !important;
+    }
+
+    // 
+    #galerie-desc-title {
+        font-size: 80px !important;
+    }
+
+    // 
+    #galerie-desc-txt {
+        font-size: 15px !important;
+    }
+
+    // 
+    // 
+    // 
+    // 
+    #form-reservation {
+        padding-right: 25 !important;
+        padding-left: 10px;
+    }
+
+    .form-res-row-preview {
+        width: 300px !important;
+        height: 150px !important;
+    }
+
+    .form-res-row-log-element {
+        width: 125px !important;
+        height: 125px !important;
+    }
+
+    .form-res-row-data {
+        width: 170px !important;
+    }
+
+    // 
+    // 
+    // 
+    // 
+    .form-row-input {
+        width: 170px !important;
+    }
+}
+
+
+
+::-webkit-scrollbar {
+    height: 7.5px;
+    width: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: shared.$white;
+}

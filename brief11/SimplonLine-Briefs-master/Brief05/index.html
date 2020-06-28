@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./app/css/main.css">
+    <script src="./app/js/effects.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="navBar">
+            <div id="navBar-Left">
+                <a href="#">
+                    <i class="gg-edit-highlight"></i>
+                </a>
+                <a href="#">
+                    <span>
+                        JoJo's Universe
+                    </span>
+                </a>
+            </div>
+            <div id="navBar-Right">
+                <a href="#inscription">
+                    <div>
+                        <i class="gg-profile"></i>
+                        <span>Inscription</span>
+                    </div>
+                </a>
+                <a href="#reservation">
+                    <div>
+                        <i class="gg-shopping-bag"></i>
+                        <span>Reservations</span>
+                    </div>
+                </a>
+                <a href="#galerie">
+                    <div>
+                        <i class="gg-image"></i>
+                        <span>Galerie</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="content">
+            <div class="sections" id="galerie">
+                <div id="galerie-preview">
+                    <div id="galerie-preview-planet" style="background-image: url('./app/img/earth.png');"></div>
+                </div>
+                <div id="galerie-content">
+                    <div id="galerie-images">
+                        <div class="galerie-images-img"
+                            style="background-image: url('app/img/earth.png');background-size: 270%;filter: brightness(0.85);">
+                        </div>
+                        <div class="galerie-images-img" style="background-image: url('app/img/moon.png');"></div>
+                        <div class="galerie-images-img" style="background-image: url('app/img/404.png');"></div>
+                        <div class="galerie-images-img" style="background-image: url('app/img/mars.png');"></div>
+                        <div class="galerie-images-img" style="background-image: url('app/img/namek-flip.png');"></div>
+                    </div>
+                    <div id="galerie-navigation">
+                        <span id="navigation-next">&rsaquo;</span>
+                        <span id="navigation-back">&lsaquo;</span>
+                    </div>
+                    <div id="galerie-desc">
+                        <span id="galerie-desc-title">The Earth</span>
+                        <span id="galerie-desc-txt">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, amet! Quis eius
+                            consequatur, natus quam illum sunt ad. Eum placeat itaque enim distinctio? Suscipit neque ad
+                            atque blanditiis officia nemo omnis ratione eveniet cupiditate fugit voluptatum odit eius,
+                            fuga maiores.
+                        </span>
+                        <div id="galerie-desc-details">
+                            <div class="galerie-desc-det">
+                                <span>Population :</span>
+                                <span>3 BIL</span>
+                            </div>
+                            <div class="galerie-desc-det">
+                                <span>Polution :</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="galerie-desc-det">
+                                <span>Price :</span>
+                                <span>1000 DH</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="galerie-reserve">
+                        <span id="galerie-reserve-btn">Reserver</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sections" id="reservation">
+                <div id="form-reservation">
+                    <span class="form-title">Reservation</span>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Planet :</span>
+                        <div class="form-res-row-preview"></div>
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">logement :</span>
+                        <div class="form-res-row-log">
+                            <label for="rad-log-1">
+                                <div class="form-res-row-log-element">
+                                    <div class="form-res-row-log-element-img"
+                                        style="background-image: url('./app/img/earth/log1.jpg');"></div>
+                                    <span class="form-res-row-log-element-price">3000-dh</span>
+                                    <input type="radio" name="logement" id="rad-log-1">
+                                </div>
+                            </label>
+                            <label for="rad-log-2">
+                                <div class="form-res-row-log-element">
+                                    <div class="form-res-row-log-element-img"
+                                        style="background-image: url('./app/img/earth/log2.jpg');"></div>
+                                    <span class="form-res-row-log-element-price">5000-dh</span>
+                                    <input type="radio" name="logement" id="rad-log-2" checked>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Nom & Prenom :</span>
+                        <input type="text" class="form-res-row-data" id="form-res-row-data-np" disabled />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">E-Mail :</span>
+                        <input type="text" class="form-res-row-data" id="form-res-row-data-em" disabled />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Date de Naissance :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Date Debut :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Date Fin :</span>
+                        <input type="date" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Nombre de personne :</span>
+                        <input type="number" class="form-res-row-data" value="0" />
+                    </div>
+                    <hr>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Prix :</span>
+                        <span class="form-res-row-title form-res-price">0000-DH</span>
+                    </div>
+                    <hr>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">Numero de CB :</span>
+                        <input type="text" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span class="form-res-row-title">CCV :</span>
+                        <input type="text" class="form-res-row-data" />
+                    </div>
+                    <div class="form-res-row">
+                        <span id="form-btn-res-order">Reserver</span>
+                        <span id="form-btn-res-cancell">Annuler</span>
+                    </div>
+                </div>
+                <div id="section2-alerts">
+                    <div id="section2-confirmation">
+                        <span>Voulez vous vraiment reservez cette Planet ?</span>
+                        <div id="section2-confirmation-form">
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Planet :</span>
+                                <span class="section2-confirmation-form-value">THE EARTH</span>
+                            </div>
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Logment :</span>
+                                <span class="section2-confirmation-form-value">Type-2</span>
+                            </div>
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Renting days :</span>
+                                <span class="section2-confirmation-form-value">#</span>
+                            </div>
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Persons Number :</span>
+                                <span class="section2-confirmation-form-value">#</span>
+                            </div>
+                            <div class="section2-confirmation-form-row">
+                                <span class="section2-confirmation-form-title">Price :</span>
+                                <span class="section2-confirmation-form-value">#</span>
+                            </div>
+                        </div>
+                        <div id="section2-confirmation-btns">
+                            <span id="section2-confirmation-cancel">Annuler</span>
+                            <span id="section2-confirmation-valide">Reserver</span>
+                        </div>
+                    </div>
+                    <div id="section2-msgs">
+                        <!-- <i class="gg-danger"></i> -->
+                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, error. -->
+                    </div>
+                </div>
+            </div>
+            <div class="sections" id="inscription">
+                <div id="form-inscription">
+                    <span class="form-title">Inscription</span>
+                    <div class="form-row">
+                        <span class="form-row-title">Identifiant :</span>
+                        <input type="text" class="form-row-input">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-row-title">Nom & Prenom :</span>
+                        <input type="text" class="form-row-input">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-row-title">E-Mail :</span>
+                        <input type="text" class="form-row-input">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-row-title">Mot de pass :</span>
+                        <input type="password" class="form-row-input">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-row-title">Confirmation MP :</span>
+                        <input type="password" class="form-row-input">
+                    </div>
+                    <div class="form-row">
+                        <span id="form-btn-main">Inscrire</span>
+                        <span id="form-btn-sec">Annuler</span>
+                    </div>
+                </div>
+                <div id="section3-alerts">
+                    <div id="section3-msgs">
+                        lorem
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <script src="./app/js/galerie.js"></script>
+    <script src="./app/js/reservation.js"></script>
+    <script src="./app/js/inscription.js"></script>
+</body>
+
+</html>
