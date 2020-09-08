@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: brief 13
+Plugin Name: kamal
 Plugin URI: https://simplonline.co
 Description: Ceci est mon premier plugin
 Author: kamal chokrane

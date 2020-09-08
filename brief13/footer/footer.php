@@ -31,7 +31,7 @@ if(!defined('ABSPATH'))
   <?php endif;?>
   <div class="metabox-holder">
     <div class="postbox">
-      <h3><strong>Enter footer link and click on save button.</strong></h3>
+      <h3><strong>Enter votre lien et enregitrer_le   .</strong></h3>
       <form method="post" action="">
         <table class="form-table">
           <tr>
